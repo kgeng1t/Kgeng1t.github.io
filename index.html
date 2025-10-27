@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <style>
+        body { font-family: Arial; margin: 0; padding: 20px; }
+        .tab { display: none; }
+        .active { display: block; }
+        nav { margin-bottom: 20px; }
+        button { padding: 10px; margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <button onclick="showTab(1)">Главная</button>
+        <button onclick="showTab(2)">О нас</button>
+        <button onclick="showTab(3)">Контакты</button>
+    </nav>
+
+    <div id="tab1" class="tab active">
+        <h2>Добро пожаловать на сайт</h2>
+        <p>Это главная страница</p>
+    </div>
+
+    <div id="tab2" class="tab">
+        <h2>О нас</h2>
+        <p>Информация о компании</p>
+    </div>
+
+    <div id="tab3" class="tab">
+        <h2>Контакты</h2>
+        <p>Телефон: +7 666 777-88-88</p>
+        <p>Email: testtest@mail.ru</p>
+    </div>
+
+    <script>
+        function showTab(tabNumber) {
+            // Скрыть все вкладки
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Показать выбранную вкладку
+            document.getElementById('tab' + tabNumber).classList.add('active');
+        }
+    </script>
+</body>
+</html>
